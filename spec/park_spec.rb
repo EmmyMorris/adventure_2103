@@ -26,5 +26,11 @@ RSpec.describe Park do
       park1.add_trail(trail2)
       expect(park1.trails).to eq([trail1, trail2])
     end
+    it 'adds trails to another park' do
+      park2 = Park.new('Bryce Canyon')
+      trail3 = Trail.new({name: 'Tower Bridge', length: '3.0 miles', level: :moderate})
+      park2.add_trail(trail3)
+      expect(park2.trails).to eq([trail3])
+    end
   end
 end
