@@ -6,4 +6,8 @@ class Trail
     @length = trail_info[:length]
     @level = trail_info[:level]
   end
+
+  def length
+    @length[0..2].to_f
+  end
 end
