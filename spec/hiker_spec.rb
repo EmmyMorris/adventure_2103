@@ -83,5 +83,15 @@ RSpec.describe  do
     end
   end
 
-  describe '#favor'
+  describe '#favorite_snack' do
+    it 'returns favorite snack' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 2)
+      hiker.pack('trail mix', 3)
+      hiker.pack('apple', 4)
+      hiker.pack('carrot', 3)
+
+      expect(hiker.favorite_snack).to eq("apple")
+    end
+  end
 end
