@@ -15,4 +15,18 @@ RSpec.describe  do
       expect(hiker.experience_level).to eq(:moderate)
     end
   end
+  describe '#pack' do
+    it 'has no snacks' do
+      hiker = Hiker.new('Dora', :moderate)
+      expect(hiker.snacks).to eq({})
+    end
+
+    it 'packs snacks' do
+      hiker = Hiker.new('Dora', :moderate)
+      hiker.pack('water', 1)
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+      expect(hiker.snacks).to eq({"water" => 2, "trail mix" => 3})
+    end
+  end
 end
