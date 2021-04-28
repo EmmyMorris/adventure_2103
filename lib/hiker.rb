@@ -20,4 +20,13 @@ class Hiker
   def visit(park)
     @parks_visited << park
   end
+
+  def possible_trails
+    trails = @parks_visited.map do |park|
+      park.trails
+    end.flatten
+    trails.select do |trail|
+      trail.level == @experience_level
+    end
+  end
 end
